@@ -47,7 +47,7 @@ src/
 
 ## 📁 Notes
 
-in this project using [Daisy UI](https://daisyui.com/) for tailwind plugin classnames component and UI create by scratch. if you won't using Daisy UI you can uninstall that package and install youre favorite component library such as [shadcn/radix](https://ui.shadcn.com/).
+in this project using [Daisy UI](https://daisyui.com/) for tailwind plugin classnames component and UI create by scratch. if you won't using Daisy UI you can uninstall that package and install youre favorite component library for example [shadcn/radix](https://ui.shadcn.com/).
 
 
 
