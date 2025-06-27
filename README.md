@@ -1,6 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 🚀 Bolierplate Next V2
 
-## Getting Started
+This is a [Next.js](https://nextjs.org) boilerplate project with typescript for web applications created by [GusnaRWX](https://github.com/GusnaRWX).
+
+## 📁 Project Structure
+
+```bash
+src/
+│
+├── app/ # Next.js App Router structure
+│ ├── layout.tsx # Shared layout
+│ └── page.tsx # Main page route
+│
+├── components/ # Reusable components (feature/layout/UI level)
+│
+├── features/ # Feature-specific components (domain logic)
+│
+├── hooks/ # Custom React hooks
+│
+├── lib/ # External libraries and config interceptor
+│
+├── providers/ # Context providers (e.g., Auth, Zustand)
+│
+├── store/ # zustand slices & store config
+│
+├── styles/ # CSS / Tailwind / global styles
+│
+├── types/ # Shared TypeScript type definitions
+│
+├── utils/ # Helper functions and global function for access everywhere
+```
+
+## 🧱 Tech Stack
+
+- [Next.js 15+](https://nextjs.org/docs) – App Router
+- [TypeScript](https://www.typescriptlang.org/)
+- [Zustand](https://zustand-demo.pmnd.rs/) - state management
+- [Axios](https://axios-http.com/) – for HTTP requests
+- [Tailwind CSS](https://tailwindcss.com/) – optional utility-first styling
+- [ESLint](https://eslint.org/) – with `@typescript-eslint` rules
+- [PostCSS](https://postcss.org/) – for processing styles
+- [Motion](https://motion.dev/docs) - for handle animation
+- [React-Hook-Form](https://react-hook-form.com/get-started#Quickstart) - for handle form control
+- [Zod](https://zod.dev/) - for handled validation form
+- [Zustand-lens](https://github.com/dhmk083/dhmk-zustand-lens) - wrapper for Zustand slice
+- [Daisy UI](https://daisyui.com/) - It provides useful component class names
+
+## 📁 Notes
+
+in this project using [Daisy UI](https://daisyui.com/) for tailwind plugin classnames component and UI create by scratch. if you won't using Daisy UI you can uninstall that package and install youre favorite component library as [shadcn/radix](https://ui.shadcn.com/).
+
+
+
+## 📦 Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/GusnaRWX/boilerplate-next-v2.git
+cd your-project
+
+# Install dependencies
+npm install
+# or
+yarn install
+```
+
+## 🚀 Run Project
 
 First, run the development server:
 
@@ -18,19 +82,49 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts).
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## ⚙️ Environment Variables
+Create a .env.local file based on .env.example:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+NEXT_PUBLIC_API_URL=https://your-api.com
+NODE_ENV=development
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧪 Testing (optional setup)
+Coming soon or based on the testing stack (Jest, React Testing Library, etc.).
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔒 Authentication
+The app uses an AuthProvider inside src/providers/AuthProvider.tsx to manage authentication logic via Context API or hooks.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can extend this logic with:
+
+- JWT token validation
+
+- Refresh token handling
+
+- Role-based routing
+
+
+## 📘 Folder Naming Convention
+- PascalCase: Components, files in providers/, store/, etc.
+
+- camelCase: Hooks, utility functions, file exports
+
+- kebab-case: File names when necessary (e.g., example-store.type.ts)
+
+## 🛠 Linting & Formatting
+
+```bash
+# Lint all files
+npm run lint
+```
+Make sure your editor supports ESLint and Prettier for consistent formatting.
+
+## 👨‍💻 Author
+
+Created By [GusnaRWX](https://github.com/GusnaRWX).
+
