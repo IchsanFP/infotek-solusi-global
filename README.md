@@ -47,7 +47,7 @@ src/
 
 ## 📁 Notes
 
-in this project using [Daisy UI](https://daisyui.com/) for tailwind plugin classnames component and UI create by scratch. if you won't using Daisy UI you can uninstall that package and install youre favorite component library as [shadcn/radix](https://ui.shadcn.com/).
+in this project using [Daisy UI](https://daisyui.com/) for tailwind plugin classnames component and UI create by scratch. if you won't using Daisy UI you can uninstall that package and install youre favorite component library such as [shadcn/radix](https://ui.shadcn.com/).
 
 
 
@@ -55,7 +55,7 @@ in this project using [Daisy UI](https://daisyui.com/) for tailwind plugin class
 
 ```bash
 # Clone the repo
-git clone https://github.com/GusnaRWX/boilerplate-next-v2.git
+git clone https://github.com/GusnaRWX/com.boilerplate-next-v2.git
 cd your-project
 
 # Install dependencies
