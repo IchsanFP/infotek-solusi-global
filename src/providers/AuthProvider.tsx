@@ -21,16 +21,12 @@ interface AuthContextProviderProps {
 const AuthProvider: React.FC<AuthContextProviderProps> = ({
   children
 }) => {
+  const [isAuth, setisAuth] = useState<boolean>(false);
   /**
    * function for check token with return is boolean
    * @returns
    */
   const getStatusAuth = ():boolean => {
-    setContextAuth((prevState) => ({
-      ...prevState,
-      isAuth: typeof window !== 'undefined' && getCookie(CONSTANTSTRING.ACCESSTOKEN) !== null
-    }));
-
     return (
       typeof window !== 'undefined' && getCookie(CONSTANTSTRING.ACCESSTOKEN) !== null
     );
@@ -42,27 +38,17 @@ const AuthProvider: React.FC<AuthContextProviderProps> = ({
       CONSTANTSTRING.ACCESSTOKEN,
       CONSTANTSTRING.REFRESHTOKEN
     ]);
-    setContextAuth((prevState) => ({
-      ...prevState,
-      isAuth: false
-    }))
+    setisAuth(false);
   }
-
-  const [contextAuth, setContextAuth] = useState<AuthContextType>({
-    isAuth: false,
-    resetContext,
-    getStatusAuth,
-  });
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      getStatusAuth();
-      resetContext();
+      setisAuth(getStatusAuth())
     }
   }, []);
 
 
-  return <AuthContext.Provider value={contextAuth}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ isAuth, resetContext, getStatusAuth }}>{children}</AuthContext.Provider>
 }
 
 export default AuthProvider;
