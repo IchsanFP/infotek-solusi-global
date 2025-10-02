@@ -1,6 +1,5 @@
 import "@/styles/global.css"
 import { AnimatePresence } from "motion/react";
-import { StoreProvider } from "@/providers/StoreProvider";
 import { Suspense } from "react";
 import {Inter, Playfair_Display} from 'next/font/google'
 import { Metadata } from "next";
@@ -34,11 +33,9 @@ export default function RootLayout({
         className={`${inter.className} ${playFair.className} antialiased`}
       >
         <Suspense>
-          <StoreProvider>
             <AnimatePresence initial={false} mode="wait">
             {children}
             </AnimatePresence>
-          </StoreProvider>
         </Suspense>
       </body>
     </html>
