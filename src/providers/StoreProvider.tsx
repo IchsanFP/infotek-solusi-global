@@ -1,3 +1,5 @@
+'use client'
+
 import useStore, {UseStore} from "@/store";
 import React, {createContext, ReactNode} from 'react';
 import AuthProvider from "./AuthProvider";

@@ -1,6 +1,6 @@
-## 🚀 Bolierplate Next V2
+## 🚀 Heliogic Company Profile
 
-This is a [Next.js](https://nextjs.org) boilerplate project with typescript for web applications created by [GusnaRWX](https://github.com/GusnaRWX).
+This is a [Next.js](https://nextjs.org) project building with typescript for web application.
 
 ## 📁 Project Structure
 
@@ -50,19 +50,6 @@ src/
 in this project using [Daisy UI](https://daisyui.com/) for tailwind plugin classnames component and UI create by scratch. if you won't using Daisy UI you can uninstall that package and install youre favorite component library for example [shadcn/radix](https://ui.shadcn.com/).
 
 
-
-## 📦 Installation
-
-```bash
-# Clone the repo
-git clone https://github.com/GusnaRWX/com.boilerplate-next-v2.git
-cd your-project
-
-# Install dependencies
-npm install
-# or
-yarn install
-```
 
 ## 🚀 Run Project
 
@@ -124,7 +111,4 @@ npm run lint
 ```
 Make sure your editor supports ESLint and Prettier for consistent formatting.
 
-## 👨‍💻 Author
-
-Created By [GusnaRWX](https://github.com/GusnaRWX).
 
