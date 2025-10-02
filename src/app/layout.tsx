@@ -3,6 +3,7 @@ import { AnimatePresence } from "motion/react";
 import { StoreProvider } from "@/providers/StoreProvider";
 import { Suspense } from "react";
 import {Inter, Playfair_Display} from 'next/font/google'
+import { Metadata } from "next";
 
   const inter = Inter({
   subsets: ['latin'],
@@ -17,6 +18,10 @@ const playFair = Playfair_Display({
   display: 'swap',
 })
 
+export const metadata: Metadata = {
+  title: 'Heliogic - Transforming Ideas into Digital Solutions',
+  description: "We help businesses adapt and thrive in the digital era through innovative, scalable, and client-focused technology solutions.",
+}
 
 export default function RootLayout({
   children,
