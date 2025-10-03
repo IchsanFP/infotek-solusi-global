@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@dhmk/zustand-lens": "^5.0.0",
+    "@hookform/resolvers": "^5.2.2",
     "axios": "^1.10.0",
     "clsx": "^2.1.1",
     "daisyui": "^5.0.43",
@@ -20,11 +21,13 @@
     "motion": "^12.19.2",
     "next": "15.3.4",
     "react": "^19.0.0",
+    "react-datepicker": "^8.7.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.58.1",
     "react-icons": "^5.5.0",
+    "react-toastify": "^11.0.5",
     "tailwind-merge": "^3.3.1",
-    "zod": "^3.25.67",
+    "zod": "^3.25.76",
     "zustand": "^5.0.6"
   },
   "devDependencies": {
