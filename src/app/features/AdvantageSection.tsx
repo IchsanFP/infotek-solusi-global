@@ -13,13 +13,6 @@ function AdvantageSection() {
         viewport={{ once: true}}
         transition={{ duration: 1.3, ease: 'easeOut' }}
        className="grid grid-cols-12 gap-4 lg:gap-16">
-        <div className="col-span-12 lg:col-span-6 order-1 lg:order-none">
-          <div className="text-[18px] text-black mb-8">Why Choose Us?</div>
-          <div className="text-[32px] text-black font-extrabold mb-4">The Heliogic advantage</div>
-          <div className="text-[16px] text-black text-justify">The Heliogic Advantage represents the unique blend of innovation, reliability,
-            and forward-thinking strategies that set Heliogic apart. It highlights our commitment to delivering smarter solutions, maximizing
-            value, and ensuring lasting impact for every client we serve.</div>
-        </div>
         <div className="col-span-12 lg:col-span-6 order-2 lg:order-none">
           <div className="w-full">
             <Carousel>
@@ -33,16 +26,30 @@ function AdvantageSection() {
                        backgroundImage: `url(${data.thumbnail})`
                       }}
                     ></div>
+                  
                     <div className="absolute inset-0 bg-black/50 rounded-xl"></div>
-                    <div className="relative z-10 flex flex-col justify-center items-center h-full pb-10">
-                      <div className="text-[30px] text-[#fcd38a] font-extrabold">{data.title}</div>
-                      <div className="text-[16px] lg:text-[20px] text-white font-semibold">{data.desc}</div>
+                    <div className="relative z-10 flex flex-col justify-center items-center h-full pb-10 text-center">
+                      <div className="text-[26px] text-[#96c9f4] font-extrabold mb-4">{data.title}</div>
+                      <div className="text-[16px] text-white font-semibold mb-2">{data.desc}</div>
                     </div>
                   </div>
                 ))
               }
               </div>
             </Carousel>
+          </div>
+        </div>
+        <div className="col-span-12 lg:col-span-6 order-1 lg:order-none">
+          <div className="text-[18px] text-black mb-8">
+            Why Choose Us?
+          </div>
+          <div className="text-[32px] text-black font-extrabold mb-4 leading-tight">
+            Trusted Technology Partner for Indonesia’s Digital Future
+          </div>
+          <div className="text-[16px] text-black text-justify mb-6">
+            PT Infotek Solusi Global delivers trusted, field-proven technologies from world-leading innovators to 
+            support Indonesia’s transformation in defense, education, finance, and governance.  
+            We ensure every solution is secure, compliant, and aligned with the nation’s digital priorities.
           </div>
         </div>
       </motion.div>

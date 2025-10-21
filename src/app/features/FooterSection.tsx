@@ -3,13 +3,13 @@ import React from 'react'
 function FooterSection() {
   return (
     <div className="">
-      <div className="w-full bg-[#fcd38a] py-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 xl:grid-cols-12 gap:gap-8 lg:gap-32 mx-auto px-6 text-black">
+      <div className="w-full bg-[#96c9f4] py-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 xl:grid-cols-12 gap:gap-8 lg:gap-32 mx-auto px-6 text-white">
           <div className="col-span-12 md:col-span-3 xl:col-span-4 mb-4 lg:mb-0 xl:pl-32">
             <div className="text-[14px] font-extrabold mb-4">Contact US</div>
-            <div>halo@heliogic.sg</div>
-            <div>68 Circular Road, #02-01</div>
-            <div>049422 - Singapore</div>
+            <div>Jakarta, Indonesia</div>
+            <div>info@infotekglobal.id</div>
+            <div>www.infotekglobal.id</div>
           </div>
 
           <div className="col-span-12 md:col-span-3 xl:col-span-4 mb-4 lg:mb-0 xl:pl-32">
@@ -25,8 +25,8 @@ function FooterSection() {
             <div className="flex flex-col">
               <a href="#">Home</a>
               <a href="#">About</a>
-              <a href="#">Products</a>
-              <a href="#">Partners</a>
+              <a href="#">Solution</a>
+              <a href="#">Vision</a>
               <a href="#">Contact</a>
             </div>
           </div>

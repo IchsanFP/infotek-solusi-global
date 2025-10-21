@@ -1,7 +1,7 @@
 import "@/styles/global.css"
 import { AnimatePresence } from "motion/react";
 import { Suspense } from "react";
-import {Inter, Playfair_Display} from 'next/font/google'
+import {Inter, Montserrat} from 'next/font/google'
 import { Metadata } from "next";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
   display: 'swap',
 });
 
-const playFair = Playfair_Display({
+const playFair = Montserrat({
   subsets: ['latin'],
   variable: '--font-playfair',
   weight: ['400','500','600','700','800','900'],
@@ -20,7 +20,7 @@ const playFair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Heliogic - Transforming Ideas into Digital Solutions',
+  title: 'PT Infotek Solusi Global – Intelligent Systems for a Connected Future.',
   description: "We help businesses adapt and thrive in the digital era through innovative, scalable, and client-focused technology solutions.",
 }
 

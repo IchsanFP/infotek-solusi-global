@@ -8,38 +8,42 @@ function Navbar({scrollTo}: {scrollTo: (id: string) => void}) {
 
   return (
     <>
-     <div className={`fixed top-0 left-0 z-50 ${!open ? 'border border-b-gray-200' : ''}  w-full p-4 lg:px-16 lg:py-8 flex items-center justify-between lg:justify-start bg-white/20
+     <div className={`fixed top-0 left-0 z-50 ${!open ? 'border border-b-gray-200' : ''}  w-full p-4 lg:px-16 lg:py-8 flex items-center justify-between bg-white/20
     backdrop-blur-md h-24`}>
-      <div className="w-[50px] h-[65px] object-contain p-0" style={{
-        backgroundImage: `url(${LOGO})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-      }}></div>
-      <div className='hidden lg:block absolute top-10 left-1/2 -translate-x-1/2'>
+      <div
+        className="w-[120px] h-[40px] lg:w-[150px] lg:h-[50px] bg-center "
+        style={{
+          backgroundImage: `url(${LOGO})`,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+        }}
+      ></div>
+
+      <div className='hidden lg:flex items-center gap-10'>
         <div className=' flex items-center justify-end gap-20'>
         <a href="#" onClick={(e) => {
           e.preventDefault()
           scrollTo('home')
-        }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#f59b00]'>Home</a>
+        }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#4a91e7]'>Home</a>
         <a href="#" onClick={(e) => {
           e.preventDefault()
           scrollTo('about')
-        }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#f59b00]'>About</a>
+        }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#4a91e7]'>About</a>
         <a href="#" onClick={(e) => {
           e.preventDefault()
           scrollTo('product')
-        }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#f59b00]'>Products</a>
+        }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#4a91e7]'>Solution</a>
         <a href="#" onClick={(e) => {
           e.preventDefault()
           scrollTo('partner')
-        }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#f59b00]'>Partners</a>
+        }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#4a91e7]'>Vision</a>
         <a href="#" onClick={(e) => {
           e.preventDefault()
           scrollTo('contact')
-        }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#f59b00]'>Contact</a>
+        }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#4a91e7]'>Contact</a>
       </div>
     </div>
-    <div className='block lg:hidden'>
+      <div className='block lg:hidden'>
         <button className='btn btn-circle border border-gray-400 bg-transparent' onClick={() => setOpen(!open)}>
           {
           !open && (

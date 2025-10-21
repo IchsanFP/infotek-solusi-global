@@ -7,8 +7,9 @@ import { Product } from "@/types/products.type";
 
 import HomeSection from "./features/HomeSection";
 import AboutSection from "./features/AboutSection";
-import ProductSection from "./features/ProductSection";
+// import ProductSection from "./features/SolutionSection";
 import AdvantageSection from "./features/AdvantageSection";
+import SolutionSection from "./features/SolutionSection";
 import PartnerSection from "./features/PartnerSection";
 import ContactSection from "./features/ContactSection";
 import FooterSection from "./features/FooterSection";
@@ -73,7 +74,8 @@ export default function Home() {
      <div className="h-24"></div>
      <HomeSection homeRef={homeRef} scrollTo={scrollTo} onOpenForm={onOpenForm}/>
      <AboutSection aboutRef={aboutRef}/>
-     <ProductSection productRef={productRef} openModal={openModal}/>
+     {/* <ProductSection productRef={productRef} openModal={openModal}/> */}
+     <SolutionSection productRef={productRef} openModal={openModal}/>
      <AdvantageSection />
      <PartnerSection partnerRef={partnerRef} scrollTo={scrollTo}/>
      <ContactSection contactRef={contactRef}/>

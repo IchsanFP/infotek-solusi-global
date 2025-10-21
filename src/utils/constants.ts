@@ -13,10 +13,13 @@ export const CONSTANTSTRING = {
   REFRESHTOKEN: 'refreshToken'
 }
 
-export const LOGO = 'assets/images/logo_heliogic.png'
+// export const LOGO = 'assets/images/logo_heliogic.png'
+export const LOGO = 'assets/images/infotek_logo.png'
 export const HERO = 'assets/images/hero_heliologic.jpeg'
 export const HERO2 = 'assets/images/hero2.jpg'
+export const HERO3 = 'assets/images/hero3.jpg'
 export const AGGREEMENT = 'assets/images/aggreement.jpg'
+export const AGGREEMENT2 = 'assets/images/aggreement2.jpg'
 export const CSD = 'assets/images/csd.jpg'
 export const AI = 'assets/images/ai.jpg'
 export const MOBILE = 'assets/images/mobile.jpg'
@@ -32,6 +35,16 @@ export const PARTNERSHIP = 'assets/images/partnership.jpg'
 export const TEAM = 'assets/images/team.jpg'
 export const SOLVING = 'assets/images/solving.jpg'
 export const TECHNOLOGY = 'assets/images/technology.jpg'
+export const INTELLIGENCE = 'assets/images/intelligence.jpg'
+export const EDUCATION = 'assets/images/education.jpg'
+export const SMARTCITY = 'assets/images/smartcity.jpg'
+export const FINANCIALTECH = 'assets/images/financialtech.jpg'
+export const OFFICIALLI = 'assets/images/officialli.jpg'
+export const SECURE = 'assets/images/secure.jpg'
+export const MULTISECTOR = 'assets/images/multisector.jpg'
+export const INOVATIONAI = 'assets/images/inovationai.jpg'
+export const NATIONAL = 'assets/images/national.jpg'
+
 
 export const dataPartner = [
   {
@@ -50,9 +63,9 @@ export const dataPartner = [
 
 export const dataProduct = [
   {
-    name: 'Intextive',
-    thumbnail: AI,
-    title: 'Turn incident cases into insights faster, smarter, and reliable.',
+    name: 'XALTRYX Command Intelligence',
+    thumbnail: MOBILE,
+    title: 'Secure, scalable systems for enterprise and government networks.',
     description: 'Intextive empowers organizations to capture, report, summarize, and analyze cases and events seamlessly. From real-time alerts to actionable analytics, it ensures no detail is lost and every case leads to better decisions.',
     feature: [
       {
@@ -88,9 +101,9 @@ export const dataProduct = [
     ]
   },
   {
-  name: 'Cell Sentinel Lab',
+  name: 'Data Intelligence & Analytics',
   thumbnail: CSD,
-    title: 'Guarding your network, one signal at a time.',
+    title: 'Transform complex data into actionable insights and strategic awareness.',
     description: 'Cell Sentinel Lab provides precise detection and analysis of cellular signals. Whether its identifying rogue BTS towers, tracking suspicious activity, or ensuring network reliability, this platform delivers clarity where it matters most.',
     feature: [
       {
@@ -126,9 +139,9 @@ export const dataProduct = [
     ]
   },
   {
-  name: 'SignaLens Media',
+  name: 'Operational Intelligence Platforms',
   thumbnail: SOLUTIONS,
-    title: 'Stay ahead of the narrative monitor, analyze, and act.',
+    title: 'Real-time situational dashboards that enhance decision-making and coordination.',
     description: 'SignaLens Media tracks online news and social chatter to help you understand how narratives form and spread. With sentiment analysis, influencer mapping, and customizable dashboards, its your strategic lens into the media landscape.',
     feature: [
       {
@@ -164,9 +177,9 @@ export const dataProduct = [
     ]
   },
   {
-  name: 'HelioPulse',
-  thumbnail: MOBILE,
-    title: 'Powering the future of payments secure, fast, and scalable.',
+  name: 'AI-Driven Automation',
+  thumbnail: AI,
+    title: 'Custom machine learning models for predictive monitoring and process automation.',
     description: 'HelioPulse provides intelligent payment solutions that simplify digital transactions for businesses of all sizes. From QRIS integration to real-time analytics, it ensures secure, efficient, and growth-ready payment processing.',
     feature: [
       {
@@ -205,23 +218,67 @@ export const dataProduct = [
 
 export const dataAdvantage = [
   {
-    title: 'Experienced Team',
-    desc: 'Multidisciplinary experts with proven track records',
-    thumbnail: TEAM
+    title: "Official Licensing",
+    desc: "Exclusive partnerships with technology developers from Dubai, France, and Russia.",
+    thumbnail: OFFICIALLI
   },
   {
-    title: 'Latest Technology',
-    desc: 'Cutting-edge solutions and global best practices',
-    thumbnail: TECHNOLOGY
+    title: "Secure Localization",
+    desc: "Adapting global systems to meet Indonesia’s security and compliance standards.",
+    thumbnail: SECURE
   },
   {
-    title: 'End-to-End Solutions',
-    desc: 'Complete journey from ideation to execution',
-    thumbnail: SOLVING
+    title: "Multi-Sector Expertise",
+    desc: "Proven experience across defense, finance, education, and governance.",
+    thumbnail: MULTISECTOR
   },
   {
-    title: 'Long-term Partnership',
-    desc: 'Ongoing support and strategic collaboration',
-    thumbnail: PARTNERSHIP
+    title: "Innovation & Intelligence",
+    desc: "AI and analytics-driven platforms to enhance decision-making.",
+    thumbnail: INOVATIONAI
   },
+  {
+    title: "National Alignment",
+    desc: "Solutions that strengthen Indonesia’s digital sovereignty.",
+    thumbnail: NATIONAL
+  },
+]
+
+export const dataSolution = [
+  {
+    name: 'XALTRYX Command Intelligence',
+    thumbnail: INTELLIGENCE,
+    origin: 'Dubai 🇦🇪',
+    sector: 'Defense & Operational Intelligence',
+    description: 'Intextive empowers organizations to capture, report, summarize, and analyze cases and events seamlessly. From real-time alerts to actionable analytics, it ensures no detail is lost and every case leads to better decisions.',
+  },
+  {
+    name: 'FERQONDA Analytics Core',
+    thumbnail: CSD,
+    origin: 'Russia 🇷🇺',
+    sector: 'Big Data, Threat Intelligence & Cyber Analytics',
+    description: 'FERQONDA provides data fusion, behavioral analytics, and predictive risk detection across complex digital environments. Its adaptive machine-learning core helps identify patterns, anomalies, and correlations in vast network and sensor datasets.',
+  },
+  {
+    name: 'DIDALYTA Learning Cloud',
+    thumbnail: EDUCATION,
+    origin: 'France 🇫🇷',
+    sector: 'Education Technology',
+    description: 'DIDALYTA is a smart learning ecosystem connecting educators and learners through AI-driven adaptive learning, multilingual content delivery, and immersive collaboration tools. It supports both institutional education and corporate upskilling programs.',
+  },
+  {
+    name: 'MONETEXIQ Secure Gateway',
+    thumbnail: FINANCIALTECH,
+    origin: 'France 🇫🇷',
+    sector: 'Financial Technology & Cybersecurity',
+    description: 'MONETEXIQ is a secure transaction and fraud-monitoring platform that uses blockchain-based validation, anomaly detection, and multi-factor authentication. Designed for financial institutions, fintech startups, and digital payment providers.',
+  },
+  {
+    name: 'CIVORYNT Governance Suite',
+    thumbnail: SMARTCITY,
+    origin: 'Dubai 🇦🇪',
+    sector:'E-Government & Smart City',
+    description: 'CIVORYNT enables smart governance by integrating citizen identity management, workflow automation, and civic analytics. It supports municipalities and ministries in delivering transparent, data-driven public services.',
+  },
+  
 ]

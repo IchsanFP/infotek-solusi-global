@@ -27,16 +27,16 @@ function BaseLayout({
           zIndex: 999,
           height: 5,
           originX: 0,
-          backgroundColor: "#f59b00",
+          backgroundColor: "#4a91e7",
       }}
   />
     <div className='background-base w-full h-screen p-0 m-0'>
       <Navbar scrollTo={scrollTo}/>
-      <div className='background-base w-full scroll-auto bg-[#fdf9e6]'>
+      <div className='background-base w-full scroll-auto bg-[#F0F8FF]'>
         {children}
       </div>
       <footer>
-        <div className='flex items-center justify-center bg-[#fdf9e6] w-full py-4 text-black'>© Heliogic Pte. Ltd.</div>
+        <div className='flex items-center justify-center bg-[#F0F8FF] w-full py-4 text-black'>© PT Infotek Solusi Global – Integrating Intelligence, Securing the Future.</div>
       </footer>
     </div>
     </>
