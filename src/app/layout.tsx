@@ -20,8 +20,8 @@ const playFair = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'PT Infotek Solusi Global – Intelligent Systems for a Connected Future.',
-  description: "We help businesses adapt and thrive in the digital era through innovative, scalable, and client-focused technology solutions.",
+  title: 'PT Infotek Solusi Global – Integrating Global Innovation for a Smarter Indonesia',
+  // description: "We help businesses adapt and thrive in the digital era through innovative, scalable, and client-focused technology solutions.",
 }
 
 export default function RootLayout({
