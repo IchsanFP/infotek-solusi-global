@@ -1,57 +1,123 @@
-import React, {useMemo} from 'react'
-import * as motion from "motion/react-client"
-import { MdOutlineEmail } from "react-icons/md";
-import { FaLocationDot, FaEarthAsia  } from "react-icons/fa6";
-import dynamic from 'next/dynamic';
-
+import React, { useMemo, useState } from "react";
+import * as motion from "motion/react-client";
+import dynamic from "next/dynamic";
 
 interface ContactPropsType {
-  contactRef?: React.RefObject<HTMLDivElement | null>
+  contactRef?: React.RefObject<HTMLDivElement | null>;
 }
 
+function ContactSection({ contactRef }: ContactPropsType) {
+  const Maps = useMemo(
+    () => dynamic(() => import("@/app/components/Maps"), { ssr: false }),
+    []
+  );
 
-function ContactSection({contactRef}: ContactPropsType) {
-  const Maps = useMemo(() => dynamic(() => import('@/app/components/Maps'), {ssr: false}), []);
+  const [formData, setFormData] = useState({
+    companyName: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    alert("Message sent successfully!");
+    setFormData({ companyName: "", email: "", message: "" });
+  };
+
   return (
-    <div className="pt-8 px-4 mb-8 lg:pt-16 lg:px-16 lg:mb-16">
+    <div className="pt-8 px-4 mb-8 lg:pt-16 lg:px-16 lg:mb-16 bg-[#F0F8FF]">
       <motion.div
         initial={{ y: 300, opacity: 0 }}
-        animate={{ y: 300, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true}}
-        transition={{ duration: 1.3, ease: 'easeOut' }}
-       className="grid grid-cols-12 lg:gap-16 gap-4">
+        viewport={{ once: true }}
+        transition={{ duration: 1.3, ease: "easeOut" }}
+        className="grid grid-cols-12 lg:gap-16 gap-4"
+      >
+        {/* Map Section */}
         <div className="col-span-12 lg:col-span-6 order-2 lg:order-none">
           <Maps />
         </div>
-        <div ref={contactRef} className="col-span-12 lg:col-span-6 order-1 lg:order-none">
-          <div className="text-[18px] text-black mb-8">Get In Touch</div>
-          <div className="text-[32px] text-black font-semibold mb-4">Contact Us</div>
-          <div className="text-[14px] text-black text-justify mb-4">Let’s build the future of intelligent systems together.</div>
-          <div className="border border-gray-300 p-8 flex flex-col items-center rounded-xl justify-center mb-8">
-             <MdOutlineEmail className="text-black" size={50}/>
-             <div className="text-black text-[14px] mb-2">Email Us</div>
-             <div className="text-black text-[12px] mb-8">Send us a message anytime</div>
-             <a href="mailto:info@infotekglobal.id" className="text-[18px] cursor-pointer text-blue-500">info@infotekglobal.id</a>
+
+        {/* Contact Form Section */}
+        <div
+          ref={contactRef}
+          className="col-span-12 lg:col-span-6 order-1 lg:order-none"
+        >
+          <div className="text-[18px] text-gray-800 mb-2">Get In Touch</div>
+          <div className="text-[32px] text-gray-900 font-semibold mb-4">
+            Contact Us
           </div>
-          
-          <div className="border border-gray-300 p-8 flex flex-col items-center rounded-xl justify-center mb-8">
-             <FaEarthAsia className="text-black" size={50}/>
-             <div className="text-black text-[14px] mb-2">Website</div>
-             <a href="/" className="text-[18px] cursor-pointer text-blue-500">www.infotekglobal.id</a>
+          <div className="text-[14px] text-gray-700 text-justify mb-8">
+            Let’s build the future of intelligent systems together.
           </div>
 
-          <div className="border border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center">
-              <FaLocationDot className="text-black" size={50}/>
-              <div className="text-black text-[14px] mb-2">Visi Our Office</div>
-              <div className="text-black text-[12px] mb-8">Jakarta, Indeonesia</div>
-              <a href="#" className="text-[18px] text-blue-500">Jakarta, Indonesia</a>
+          <form
+            onSubmit={handleSubmit}
+            className="p-8 rounded-2xl flex flex-col gap-6 shadow-md  border border-[#96C9F4]/50"
+          >
+            <div>
+              <label className="block text-[14px] text-gray-700 mb-2 font-medium">
+                Company Name
+              </label>
+              <input
+                type="text"
+                name="companyName"
+                value={formData.companyName}
+                onChange={handleChange}
+                required
+                placeholder="Enter your company name"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-[14px] text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#96C9F4]"
+              />
             </div>
+
+            <div>
+              <label className="block text-[14px] text-gray-700 mb-2 font-medium">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="Enter your email address"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-[14px] text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#96C9F4]"
+              />
+            </div>
+
+            <div>
+              <label className="block text-[14px] text-gray-700 mb-2 font-medium">
+                Message
+              </label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                placeholder="Write your message here..."
+                rows={5}
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-[14px] text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#96C9F4] resize-none"
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn btn-md border-none bg-[#96C9F4] hover:bg-[#82BDE8] text-white transition-all duration-300 font-semibold shadow-sm"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
-        
       </motion.div>
     </div>
-  )
+  );
 }
 
-export default ContactSection
+export default ContactSection;

@@ -7,10 +7,9 @@ import { FaArrowRight } from "react-icons/fa";
 interface HomeSectionProps {
   homeRef?: React.RefObject<HTMLDivElement | null>
   scrollTo: (id: string) => void
-  onOpenForm: () => void
 }
 
-function HomeSection({homeRef, scrollTo, onOpenForm}: HomeSectionProps) {
+function HomeSection({homeRef, scrollTo}: HomeSectionProps) {
   return (
     <div ref={homeRef} className="relative w-full h-[500px] gap-4 lg:gap-16 lg:h-[700px] pb-4 lg:pb-0 mb-16 bg-[#96c9f4] grid grid-cols-12">
       <div className="col-span-12 lg:col-span-6 p-0 order-1 lg:order-none">
@@ -29,7 +28,6 @@ function HomeSection({homeRef, scrollTo, onOpenForm}: HomeSectionProps) {
           transition={{ duration: 1.3, ease: 'easeOut' }}
          className="h-full flex flex-col justify-center pl-4 lg:pl-16">
          <div className="text-white font-extrabold leading-10 lg:leading-14 text-[30px] lg:text-[60px] mb-8">Empowering Transformation Through Intelligent Technology</div>
-         {/* <div className="text-white text-[14px] lg:text-[18px] mb-8">Empowering digital transformation through data intelligence, secure infrastructure, and advanced analytics. PT Infotek Solusi Global delivers technology that connects, protects, and transforms organizations</div> */}
          <div className="text-white text-[14px] lg:text-[18px] mb-8">
           From tactical intelligence to digital learning and finance security — 
           <span className="font-semibold"> PT Infotek Solusi Global </span>
@@ -41,7 +39,7 @@ function HomeSection({homeRef, scrollTo, onOpenForm}: HomeSectionProps) {
             <FaArrowRight size={18} className="text-white"/>
           </button>
           <button
-            onClick={() => onOpenForm()}
+            onClick={() => scrollTo('solution')} 
             className="btn bg-white btn-md border-none text-black">
             Explore Our Technologies
           </button>

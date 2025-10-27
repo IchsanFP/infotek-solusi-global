@@ -6,13 +6,13 @@ function FooterSection() {
       <div className="w-full bg-[#96c9f4] py-8">
         <div className="grid grid-cols-1 md:grid-cols-12 xl:grid-cols-12 gap:gap-8 lg:gap-32 mx-auto px-6 text-white">
           <div className="col-span-12 md:col-span-3 xl:col-span-4 mb-4 lg:mb-0 xl:pl-32">
-            <div className="text-[14px] font-extrabold mb-4">Contact US</div>
-            <div>Jakarta, Indonesia</div>
-            <div>info@infotekglobal.id</div>
-            <div>www.infotekglobal.id</div>
+            {/* <div className="text-[14px] font-extrabold mb-4">Contact US</div> */}
+            <div>PT Infotek Solusi Global</div>
+            <div>Woodland Park</div>
+            <div>021-123456XX</div>
           </div>
 
-          <div className="col-span-12 md:col-span-3 xl:col-span-4 mb-4 lg:mb-0 xl:pl-32">
+          {/* <div className="col-span-12 md:col-span-3 xl:col-span-4 mb-4 lg:mb-0 xl:pl-32">
             <div className="text-[14px] font-bold mb-4">Others</div>
             <div className="flex flex-col">
               <a href="#">Privacy & Policy</a>
@@ -29,7 +29,7 @@ function FooterSection() {
               <a href="#">Vision</a>
               <a href="#">Contact</a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

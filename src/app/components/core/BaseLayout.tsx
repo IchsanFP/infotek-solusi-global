@@ -36,7 +36,7 @@ function BaseLayout({
         {children}
       </div>
       <footer>
-        <div className='flex items-center justify-center bg-[#F0F8FF] w-full py-4 text-black'>© PT Infotek Solusi Global – Integrating Intelligence, Securing the Future.</div>
+        <div className='flex items-center justify-center bg-[#F0F8FF] w-full py-4 text-black'>© PT Infotek Solusi Global</div>
       </footer>
     </div>
     </>

@@ -31,11 +31,11 @@ function Navbar({scrollTo}: {scrollTo: (id: string) => void}) {
         }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#4a91e7]'>About</a>
         <a href="#" onClick={(e) => {
           e.preventDefault()
-          scrollTo('product')
+          scrollTo('solution')
         }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#4a91e7]'>Solution</a>
         <a href="#" onClick={(e) => {
           e.preventDefault()
-          scrollTo('partner')
+          scrollTo('vision')
         }} className='text-[14px] font-semibold text-black cursor-pointer transition-transform duration-300 hover:scale-150 hover:text-[#4a91e7]'>Vision</a>
         <a href="#" onClick={(e) => {
           e.preventDefault()
@@ -69,12 +69,12 @@ function Navbar({scrollTo}: {scrollTo: (id: string) => void}) {
         }} className='text-[14px] font-semibold text-black cursor-pointer'>About</a>
         <a href="#" onClick={(e) => {
           e.preventDefault()
-          scrollTo('product')
-        }} className='text-[14px] font-semibold text-black cursor-pointer'>Products</a>
+          scrollTo('solution')
+        }} className='text-[14px] font-semibold text-black cursor-pointer'>Solution</a>
         <a href="#" onClick={(e) => {
           e.preventDefault()
-          scrollTo('partner')
-        }} className='text-[14px] font-semibold text-black cursor-pointer'>Partners</a>
+          scrollTo('vision')
+        }} className='text-[14px] font-semibold text-black cursor-pointer'>Visiion</a>
         <a href="#" onClick={(e) => {
           e.preventDefault()
           scrollTo('contact')

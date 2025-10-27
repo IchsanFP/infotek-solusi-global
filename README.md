@@ -1,4 +1,4 @@
-## 🚀 Heliogic Company Profile
+## 🚀 PT Infotek Solusi Global Company Profile
 
 This is a [Next.js](https://nextjs.org) project building with typescript for web application.
 
