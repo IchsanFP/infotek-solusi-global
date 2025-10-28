@@ -1,5 +1,5 @@
 import React from 'react'
-import { HERO3 } from "@/utils/constants";
+import { HERO } from "@/utils/constants";
 import * as motion from "motion/react-client"
 import { FaArrowRight } from "react-icons/fa";
 
@@ -14,7 +14,7 @@ function HomeSection({homeRef, scrollTo}: HomeSectionProps) {
     <div ref={homeRef} className="relative w-full h-[500px] gap-4 lg:gap-16 lg:h-[700px] pb-4 lg:pb-0 mb-16 bg-[#96c9f4] grid grid-cols-12">
       <div className="col-span-12 lg:col-span-6 p-0 order-1 lg:order-none">
         <div className="w-full h-[250px] lg:h-full object-cover p-0" style={{
-          backgroundImage: `url(${HERO3})`,
+          backgroundImage: `url(${HERO})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }}></div>

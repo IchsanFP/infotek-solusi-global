@@ -1,8 +1,7 @@
 import React from 'react'
 import * as motion from "motion/react-client"
-import { dataSolution, AI } from '@/utils/constants'
-import { FaArrowRight } from "react-icons/fa";
-import { Product } from '@/types/products.type';
+import { dataSolution } from '@/utils/constants'
+
 
 interface ProductPropsType {
   solutionRef?: React.RefObject<HTMLDivElement | null>

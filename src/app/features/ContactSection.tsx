@@ -1,6 +1,10 @@
+"use client";
+
 import React, { useMemo, useState } from "react";
 import * as motion from "motion/react-client";
 import dynamic from "next/dynamic";
+import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 
 interface ContactPropsType {
   contactRef?: React.RefObject<HTMLDivElement | null>;
@@ -18,6 +22,8 @@ function ContactSection({ contactRef }: ContactPropsType) {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -25,15 +31,50 @@ function ContactSection({ contactRef }: ContactPropsType) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message sent successfully!");
-    setFormData({ companyName: "", email: "", message: "" });
-  };
+    setLoading(true);
+
+    // tanggal
+    const today = new Date();
+    const dateString = today.toLocaleDateString("id-ID", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+
+    // Data yang dikirim
+    const templateParams = {
+      companyName: formData.companyName,
+      email: formData.email,
+      message: formData.message,
+      date: dateString,
+    };
+
+    try {
+      const result =await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+
+      // console.log("Email sent successfully:", result.text);
+      toast.success("Message sent successfully!", { duration: 4000 });
+      setFormData({ companyName: "", email: "", message: "" });
+    } catch (error) {
+      // console.error("Email sending failed:", error);
+      toast.error("Failed to send message. Please try again later.", { duration: 4000 });
+    } finally {
+      setLoading(false);
+    }
+  };         
 
   return (
     <div className="pt-8 px-4 mb-8 lg:pt-16 lg:px-16 lg:mb-16 bg-[#F0F8FF]">
+      <Toaster position="top-right" reverseOrder={false} />
       <motion.div
         initial={{ y: 300, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -41,12 +82,10 @@ function ContactSection({ contactRef }: ContactPropsType) {
         transition={{ duration: 1.3, ease: "easeOut" }}
         className="grid grid-cols-12 lg:gap-16 gap-4"
       >
-        {/* Map Section */}
         <div className="col-span-12 lg:col-span-6 order-2 lg:order-none">
           <Maps />
         </div>
 
-        {/* Contact Form Section */}
         <div
           ref={contactRef}
           className="col-span-12 lg:col-span-6 order-1 lg:order-none"
@@ -61,7 +100,7 @@ function ContactSection({ contactRef }: ContactPropsType) {
 
           <form
             onSubmit={handleSubmit}
-            className="p-8 rounded-2xl flex flex-col gap-6 shadow-md  border border-[#96C9F4]/50"
+            className="p-8 rounded-2xl flex flex-col gap-6 shadow-md border border-[#96C9F4]/50"
           >
             <div>
               <label className="block text-[14px] text-gray-700 mb-2 font-medium">
@@ -108,11 +147,41 @@ function ContactSection({ contactRef }: ContactPropsType) {
               />
             </div>
             <button
-              type="submit"
-              className="btn btn-md border-none bg-[#96C9F4] hover:bg-[#82BDE8] text-white transition-all duration-300 font-semibold shadow-sm"
-            >
-              Send Message
-            </button>
+                type="submit"
+                disabled={loading}
+                className={`w-full px-6 py-2 rounded-lg text-white font-semibold shadow-sm transition-all duration-300
+                  bg-[#96C9F4]
+                  ${loading ? "cursor-not-allowed opacity-100" : "hover:bg-[#82BDE8] cursor-pointer"}
+                `}
+              >
+                {loading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg
+                      className="animate-spin h-4 w-4 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
+                      ></path>
+                    </svg>
+                    Sending...
+                  </span>
+                ) : (
+                  "Send Message"
+                )}
+              </button>
           </form>
         </div>
       </motion.div>
