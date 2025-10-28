@@ -105,6 +105,7 @@ function ContactSection({ contactRef }: ContactPropsType) {
             <div>
               <label className="block text-[14px] text-gray-700 mb-2 font-medium">
                 Company Name
+                <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -120,7 +121,9 @@ function ContactSection({ contactRef }: ContactPropsType) {
             <div>
               <label className="block text-[14px] text-gray-700 mb-2 font-medium">
                 Email
+                <span className="text-red-500">*</span>
               </label>
+              
               <input
                 type="email"
                 name="email"
@@ -135,6 +138,7 @@ function ContactSection({ contactRef }: ContactPropsType) {
             <div>
               <label className="block text-[14px] text-gray-700 mb-2 font-medium">
                 Message
+                <span className="text-red-500">*</span>
               </label>
               <textarea
                 name="message"

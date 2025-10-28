@@ -1,24 +1,26 @@
-import React from 'react'
+import React from "react";
 import { FaPhone } from "react-icons/fa6";
 
 function FooterSection() {
   return (
-    <div className="">
-      <div className="w-full bg-[#96c9f4] py-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 xl:grid-cols-12 gap:gap-8 lg:gap-32 mx-auto px-6 text-white">
-          <div className="col-span-12 md:col-span-3 xl:col-span-4 mb-4 lg:mb-0 xl:pl-32">
-            {/* <div className="text-[14px] font-extrabold mb-4">Contact US</div> */}
-            <div>PT INFOTEK SOLUSI GLOBAL</div>
-            <div>Woodland Park - jakarta Selatan</div>
-             <div className="flex items-center gap-2 ">
-              <FaPhone className="text-white text-[16px]" />
-              <span>021-5010 6783</span>
-            </div>
+    <footer className="bg-[#96c9f4] text-white py-8 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col gap-2 text-center md:text-left">
+        <div>
+          <div className="uppercase font-semibold text-lg">
+            PT Infotek Solusi Global
+          </div>
+          <div className="uppercase text-sm">
+            Woodland Park - Jakarta Selatan
           </div>
         </div>
+
+        <div className="flex items-center justify-center md:justify-start gap-2 mt-1">
+          <FaPhone className="text-white text-[16px]" />
+          <span className="text-sm md:text-base">021-5010 6783</span>
+        </div>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }
 
-export default FooterSection
+export default FooterSection;
